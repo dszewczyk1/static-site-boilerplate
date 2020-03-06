@@ -25,7 +25,17 @@ const js = {
     {
       loader: 'babel-loader',
       options: {
-        presets: ['@babel/preset-env'],
+        presets: [
+          ['@babel/preset-env',
+          {
+            useBuiltIns: 'usage',
+            corejs: 3
+          }]
+        ],
+        plugins: [
+          '@babel/plugin-proposal-optional-chaining',
+          '@babel/plugin-proposal-nullish-coalescing-operator'
+        ],
       },
     },
     'eslint-loader',

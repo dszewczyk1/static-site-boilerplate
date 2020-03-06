@@ -51,6 +51,7 @@ const stylelint = new StyleLintPlugin();
 // Extract CSS
 const cssExtract = new MiniCssExtractPlugin({
   filename: 'style.[contenthash].css',
+  chunkFilename: '[name].[contenthash].css',
 });
 
 // HTML generation
@@ -134,11 +135,11 @@ module.exports = [
   stylelint,
   cssExtract,
   ...generateHTMLPlugins(),
-  fs.existsSync(config.favicon) && favicons,
+  //fs.existsSync(config.favicon) && favicons,
   config.env === 'production' && optimizeCss,
-  config.env === 'production' && robots,
-  config.env === 'production' && sitemap,
-  config.googleAnalyticsUA && google,
+  //config.env === 'production' && robots,
+  //config.env === 'production' && sitemap,
+  //config.googleAnalyticsUA && google,
   webpackBar,
   config.env === 'development' && hmr,
 ].filter(Boolean);

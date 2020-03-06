@@ -1,0 +1,8 @@
+{
+	"className": "CookieConsent",
+	"fileName": "cookie-consent",
+	"selector": ".cc",
+	"priority": "normal",
+	"method": "normal",
+	"initialization": "selector"
+}
